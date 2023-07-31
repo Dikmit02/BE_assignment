@@ -3,12 +3,17 @@ import config from '@config/index';
 import { ConfigModule } from '@nestjs/config';
 import { DiscoveryModule } from '@nestjs/core';
 import { ConsoleExplorer, DbOperationsCommand, ListCommands } from './console';
-import { BaseValidator } from './validator';
 import { HttpProvider } from './http';
 import { BaseModel } from './db';
 import Knex from 'knex';
 import * as KnexConfig from '../../../knexfile';
 import { BoatConstants } from './constants';
+import {
+  BaseValidator,
+  IsExistsConstraint,
+  IsUniqueConstraint,
+} from './validator';
+import { Config } from './config';
 
 BaseModel.knex(Knex(KnexConfig));
 
@@ -23,6 +28,7 @@ BaseModel.knex(Knex(KnexConfig));
     }),
   ],
   providers: [
+    Config,
     DbOperationsCommand,
     ListCommands,
     ConsoleExplorer,
@@ -32,8 +38,12 @@ BaseModel.knex(Knex(KnexConfig));
       provide: BoatConstants.dbConnection,
       useFactory: async () => Knex(KnexConfig),
     },
+    IsExistsConstraint,
+    IsUniqueConstraint,
   ],
   exports: [
+    Config,
+    BaseValidator,
     {
       provide: BoatConstants.dbConnection,
       useFactory: async () => Knex(KnexConfig),

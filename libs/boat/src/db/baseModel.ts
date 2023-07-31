@@ -1,5 +1,6 @@
+import { v4 as uuidv4 } from 'uuid';
 import { pick } from 'lodash';
-import { Model } from 'objection';
+import { Model, QueryContext } from 'objection';
 import { LoadRelOptions, LoadRelSchema } from '../interfaces';
 import { CustomQueryBuilder } from './queryBuilder';
 
@@ -9,6 +10,16 @@ export class BaseModel extends Model {
   QueryBuilderType!: CustomQueryBuilder<this>;
   static QueryBuilder = CustomQueryBuilder;
   static useLimitInFirst = true;
+
+  static $beforeInsert(context: QueryContext) {
+    throw new Error('Method not implemented.');
+  }
+  static BelongsToOneRelation: any;
+  uuid: string;
+
+  $beforeInsert(Context: QueryContext): void | Promise<any> {
+    this.uuid = uuidv4();
+  }
 
   async $forceLoad(
     expression: LoadRelSchema,

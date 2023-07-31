@@ -1,5 +1,5 @@
 {
-  "name": "drl-marketing-tool-services",
+  "name": "Lal10",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -27,15 +27,17 @@
     "@nestjs/common": "^8.0.0",
     "@nestjs/config": "^1.1.6",
     "@nestjs/core": "^8.0.0",
+    "@nestjs/jwt": "^10.1.0",
+    "@nestjs/mapped-types": "*",
+    "@nestjs/passport": "^10.0.0",
     "@nestjs/platform-express": "^8.0.0",
     "@squareboat/nest-console": "^0.1.0",
-    "@squareboat/nest-queue-redis": "^0.0.4",
-    "@squareboat/nest-queue-strategy": "^0.0.9",
     "@types/knex": "^0.16.1",
     "@types/yargs-parser": "^20.2.1",
     "app-root-path": "^3.0.0",
     "aws-sdk": "^2.1066.0",
     "axios": "^0.24.0",
+    "bcrypt": "^5.1.0",
     "chalk": "^4.1.2",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
@@ -47,6 +49,8 @@
     "knex": "^1.0.3",
     "mysql2": "^3.5.2",
     "objection": "^3.0.1",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.1",
     "pg": "^8.7.3",
     "picocolors": "^1.0.0",
     "query-string": "^7.1.0",
@@ -104,7 +108,9 @@
       "<rootDir>/apps/"
     ],
     "moduleNameMapper": {
-      "^@libs/boat(|/.*)$": "<rootDir>/libs/boat/src/$1"
+      "^@libs/boat(|/.*)$": "<rootDir>/libs/boat/src/$1",
+      "^@libs/users(|/.*)$": "<rootDir>/libs/users/src/$1",
+      "^libs/auth(|/.*)$": "<rootDir>/libs/auth/src/$1"
     }
   }
 }

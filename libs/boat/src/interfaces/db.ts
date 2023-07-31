@@ -18,10 +18,13 @@ export interface SortableSchema {
 }
 
 export interface ObjectionModel {
+  id?: number;
+  uuid?: string;
+  createdAt?: Date;
+  updatedAt?: Date;
   $fetchGraph?: GenericFunction;
-  $load?(exp: LoadRelSchema): Promise<void>;
+  $load?(exp: LoadRelSchema, options?: LoadRelOptions): Promise<void>;
 }
-
 export interface NestedLoadRelSchema {
   $recursive?: boolean | number;
   $relation?: string;

@@ -1,9 +1,10 @@
 import { BoatModule } from '@libs/boat';
 import { Module } from '@nestjs/common';
+import { AuthApiModule } from './auth';
 
 @Module({
-  imports: [BoatModule],
+  imports: [BoatModule, AuthApiModule],
   controllers: [],
   providers: [],
 })
-export class AppModule {}
+export class RestModule {}

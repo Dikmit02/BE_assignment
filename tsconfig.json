@@ -6,6 +6,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
@@ -18,15 +19,23 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@libs/boat": [
-        "libs/boat/src"
-      ],
-      "@libs/boat/*": [
-        "libs/boat/src/*"
-      ],
-      "@config/*": [
-        "config/*"
-      ]
+      "@libs/boat": ["libs/boat/src"],
+      "@libs/boat/*": ["libs/boat/src/*"],
+      "@config/*": ["config/*"],
+      "@libs/users": ["libs/users/src"],
+      "@libs/users/*": ["libs/users/src/*"],
+      "@libs/auth": ["libs/auth/src"],
+      "@libs/auth/*": ["libs/auth/src/*"]
     }
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "test",
+    ".build",
+    "**/*spec.ts",
+    ".docker",
+    ".serverless",
+    "docs",
+    "scripts"
+  ]
 }

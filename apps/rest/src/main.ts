@@ -1,8 +1,8 @@
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app';
+import { RestServer } from '@libs/boat';
+import { RestModule } from './app';
 
-async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  await app.listen(3000);
-}
-bootstrap();
+RestServer.make(RestModule, {
+  port: +process.env.REST_APP_PORT,
+  addValidationContainer: true,
+  globalPrefix: 'v1',
+});

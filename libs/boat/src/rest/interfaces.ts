@@ -28,4 +28,6 @@ export interface Response extends BaseResponse {
 
 export interface ServerOptions {
   addValidationContainer?: boolean;
+  port?: number;
+  globalPrefix?: string;
 }
