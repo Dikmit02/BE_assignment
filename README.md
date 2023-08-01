@@ -17,13 +17,13 @@
 ## Backend Implementation Using NestJS, Express, TypeScript, and MySQL
 
 ### Overview
-This document outlines the implementation of backend for signup, login and user-details features using NodeJS with ExpressJS framework and a MySQL database. The application is implemented using NestJS, which is a scalable, efficient, and structured server-side Node.js framework built with TypeScript. It also uses Express.js under the hood and is compatible with the majority of Express.js middleware.
+This document outlines the backend implementation for signup, login and profile features using NodeJS with ExpressJS framework and a MySQL database. The application is implemented using NestJS, which is a scalable, efficient, and structured server-side Node.js framework built with TypeScript. It also uses Express.js under the hood and is compatible with the majority of Express.js middleware.
 
 ### Code Structure
-The main file of the application is located at apps/rest/src/main.ts. This file creates a factory module similar to an Express app. The code is organized using the repository pattern for DB operations, making it modular and maintainable betterprogramming.pub.
+The main file of the application is located at apps/rest/src/main.ts. This file creates a factory module similar to an Express app. The code is organised using the repository pattern for DB operations, making it modular and maintainable betterprogramming.pub.
 
 ### Validation and Error Handling
-The application uses global validations and an error Pipe for intercepting errors and providing appropriate responses. It utilizes the class-validator library to validate incoming data masteringbackend.com.
+The application uses global validations and an error Pipe for intercepting errors and providing appropriate responses. It utilises the class-validator library to validate incoming data masteringbackend.com.
 
 ### Database Operations
 The application uses Objection.js and Knex.js as ORM (Object-Relational Mapping) tools to interact with the MySQL database. These ORMs provide a powerful query API and help to prevent SQL injection attacks.
