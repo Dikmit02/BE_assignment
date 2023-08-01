@@ -49,6 +49,11 @@ This application demonstrates how to implement a secure and efficient backend us
 $ npm install
 ```
 
+## Migration
+```bash
+$ npm run migrate:up
+```
+
 ## Running the app
 
 ```bash
