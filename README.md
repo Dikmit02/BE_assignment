@@ -7,24 +7,41 @@
 
   <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
     <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+
 </p>
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+# Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Backend Implementation Using NestJS, Express, TypeScript, and MySQL
+
+### Overview
+This document outlines the implementation of backend for signup, login and user-details features using NodeJS with ExpressJS framework and a MySQL database. The application is implemented using NestJS, which is a scalable, efficient, and structured server-side Node.js framework built with TypeScript. It also uses Express.js under the hood and is compatible with the majority of Express.js middleware.
+
+### Code Structure
+The main file of the application is located at apps/rest/src/main.ts. This file creates a factory module similar to an Express app. The code is organized using the repository pattern for DB operations, making it modular and maintainable betterprogramming.pub.
+
+### Validation and Error Handling
+The application uses global validations and an error Pipe for intercepting errors and providing appropriate responses. It utilizes the class-validator library to validate incoming data masteringbackend.com.
+
+### Database Operations
+The application uses Objection.js and Knex.js as ORM (Object-Relational Mapping) tools to interact with the MySQL database. These ORMs provide a powerful query API and help to prevent SQL injection attacks.
+
+### Data Transformation
+A transformer layer is implemented to transform the response data according to the requirements. This layer helps to ensure that the data sent to the client is in the correct format and can be easily consumed.
+
+### NestJS and TypeScript
+NestJS is a framework for building efficient, scalable Node.js server-side applications. It uses modern JavaScript, is built with TypeScript and combines elements of OOP (Object Oriented Programming), FP (Functional Programming), and FRP (Functional Reactive Programming) betterprogramming.pub.
+
+### TypeScript
+TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. It offers static types, classes, and interfaces to help you build robust components. When you use TypeScript, you can catch errors early during the development process masteringbackend.com.
+
+### Dependency Injection
+NestJS uses Dependency Injection (DI) to organize the code in a flexible and efficient manner. DI is a design pattern in which a class receives its dependencies from external sources rather than creating them itself. This leads to more modular, testable, and maintainable code masteringbackend.com.
+
+### Conclusion
+This application demonstrates how to implement a secure and efficient backend using NodeJS with ExpressJS framework, MySQL database, and TypeScript. It uses best practices such as server-side validation, error handling, and secure coding. The code is well-structured and modular, making it easy to maintain and extend in the future.
 
 ## Installation
 
@@ -45,29 +62,8 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
 ## License
+Diksha Mittal
+dikshmittal21297@gmail.com
 
-Nest is [MIT licensed](LICENSE).
