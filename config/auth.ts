@@ -5,5 +5,5 @@ export default registerAs('auth', () => ({
     secret: process.env.JWT_SECRET,
     ttl: process.env.JWT_TTL,
   },
-  bcryptSalt: +process.env.BCRYPT_SALT,
+  bcryptSalt: `${process.env.BCRYPT_SALT}`,
 }));

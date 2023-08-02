@@ -43,7 +43,7 @@ export class AuthApiService {
 
   async validateUser(user: IUser$Model, password: string): Promise<boolean> {
     const hash = await this.hashPassword(password);
-    return bcrypt.compare(password, hash);
+    return hash === user.password;
   }
 
   async hashPassword(password): Promise<string> {
