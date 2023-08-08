@@ -3,7 +3,7 @@ import { Request, Response, RestController } from '@libs/boat';
 import { AuthApiService } from '../services/service';
 import { UserTransformer } from '@libs/users';
 import { AuthGuard } from '@libs/auth';
-@Controller('auth')
+@Controller('')
 export class AuthController extends RestController {
   constructor(private readonly service: AuthApiService) {
     super();
