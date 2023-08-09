@@ -9,14 +9,6 @@ export class AuthController extends RestController {
   constructor(private readonly service: AuthApiService) {
     super();
   }
-  @Post('signup')
-  async signup(@Req() req: Request, @Res() res: Response) {
-    const { user, token } = await this.service.signup(req.all());
-    return res.success({
-      ...(await this.transform(user, new UserTransformer(), { req })),
-      token,
-    });
-  }
 
   @Post('login')
   async login(@Req() req: Request, @Res() res: Response) {

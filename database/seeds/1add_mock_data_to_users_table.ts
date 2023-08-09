@@ -12,7 +12,7 @@ export async function seed(knex: Knex): Promise<void> {
 
  for await (const user of data?.users) {
   payload.push(
-    {password:await bcrypt.hash(user?.password, process.env.BCRYPT_SALT),
+    {password:await bcrypt.hash(user?.password, process.env.BCRYPT_SALT.split('\\').join('')),
     displayname:user?.displayname,
     firstname:user?.firstname,
     email:user?.email,

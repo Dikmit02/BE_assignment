@@ -1,7 +1,7 @@
 import { BaseValidator } from '@libs/boat/validator';
 import { IUser$Model, UserLibService } from '@libs/users';
 import { Injectable } from '@nestjs/common';
-import { LoginDto, SignUpDto } from '../validators';
+import { LoginDto } from '../validators';
 import * as bcrypt from 'bcrypt';
 import { ConfigService } from '@nestjs/config';
 import { JwtPayload } from '@libs/auth';
@@ -29,17 +29,6 @@ export class AuthApiService {
     return { user, token };
   }
 
-  async signup(inputs: Record<string, any>) {
-    const params = await this.validator.fire(inputs, SignUpDto);
-    const password = await this.hashPassword(params?.password);
-    const user = await this.users.createUser({
-      ...params,
-      password,
-    });
-    const payload: JwtPayload = { email: user.email };
-    const token = await this.authService.generateToken(payload);
-    return { user, token };
-  }
 
   async validateUser(user: IUser$Model, password: string): Promise<boolean> {
     const hash = await this.hashPassword(password);
@@ -47,7 +36,7 @@ export class AuthApiService {
   }
 
   async hashPassword(password): Promise<string> {
-    // const hashkey = await this.config.get('auth.bcryptSalt');
-    return await bcrypt.hash(password, '$2b$10$5yMonn8Zmz6nZhUUbfl17O');
+    const hashkey = await this.config.get('auth.bcryptSalt');
+    return await bcrypt.hash(password, hashkey);
   }
 }
