@@ -1,6 +1,7 @@
 import { ObjectionModel } from '@libs/boat';
 
 export interface IUser$Model extends ObjectionModel {
+  id?:number,
   userName?: string;
   email?: string;
   password?: string;
@@ -10,4 +11,5 @@ export interface IUser$Model extends ObjectionModel {
   profile?:string,
   organization?:string,
   dob?:string
+  
 }
