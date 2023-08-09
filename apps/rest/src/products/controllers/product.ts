@@ -17,6 +17,7 @@ export class ProductController extends RestController {
     );
   }
 
+
   @Get('my-products')
   async myProducts(@Req() req: Request, @Res() res: Response) {
     const response= await this.service.myProducts(req.all());

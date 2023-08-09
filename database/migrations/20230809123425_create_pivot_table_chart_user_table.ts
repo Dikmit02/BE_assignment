@@ -1,14 +1,12 @@
 import { Knex } from 'knex';
 
 export async function up(knex: Knex): Promise<void> {
-  return knex.schema.createTable('product_feature', function (table) {
-    table.bigIncrements('id');
-    table.uuid('uuid').index();
-    table.integer('product_id');
-    table.integer('feature_id');
+  return knex.schema.createTable('user_chart', function (table) {
+    table.integer('user_id');
+    table.string('chart_id');
   });
 }
 
 export async function down(knex: Knex): Promise<void> {
-  return knex.schema.dropTableIfExists('product_feature');
+  return knex.schema.dropTableIfExists('user_chart');
 }
