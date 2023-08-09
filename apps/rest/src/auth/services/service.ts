@@ -26,7 +26,8 @@ export class AuthApiService {
     }
     const payload: JwtPayload = { email: user.email };
     const token = await this.authService.generateToken(payload);
-    return { user, token };
+    const {id,password,...rest}=user
+    return { user:rest, token };
   }
 
 

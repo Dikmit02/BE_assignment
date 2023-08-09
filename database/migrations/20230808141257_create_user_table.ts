@@ -10,10 +10,8 @@ export async function up(knex: Knex): Promise<void> {
     table.string('username').unique();
     table.string('profile');
     table.string('organization');
-    table.date('dob')
+    table.string('dob')
     table.string('password');
-    // table.json('charts');
-    // table.json('productFeatures');
   });
 }
 

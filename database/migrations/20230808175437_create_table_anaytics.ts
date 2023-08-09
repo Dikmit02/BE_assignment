@@ -1,5 +1,4 @@
 import { Knex } from 'knex';
-import { timestamps } from '../helpers';
 
 export async function up(knex: Knex): Promise<void> {
   return knex.schema.createTable('analytics', function (table) {

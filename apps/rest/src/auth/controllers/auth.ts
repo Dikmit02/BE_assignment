@@ -14,7 +14,7 @@ export class AuthController extends RestController {
   async login(@Req() req: Request, @Res() res: Response) {
     const { user, token } = await this.service.login(req.all());
     return res.success({
-      ...(await this.transform(user, new UserTransformer(), { req })),
+      user,
       token,
     });
   }
