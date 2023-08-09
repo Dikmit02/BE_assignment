@@ -112,7 +112,9 @@
     "moduleNameMapper": {
       "^@libs/boat(|/.*)$": "<rootDir>/libs/boat/src/$1",
       "^@libs/users(|/.*)$": "<rootDir>/libs/users/src/$1",
-      "^libs/auth(|/.*)$": "<rootDir>/libs/auth/src/$1"
+      "^libs/auth(|/.*)$": "<rootDir>/libs/auth/src/$1",
+      "^lib/products(|/.*)$": "<rootDir>/libs/products/src/$1",
+      "^lib/analytics(|/.*)$": "<rootDir>/libs/analytics/src/$1"
     }
   }
 }

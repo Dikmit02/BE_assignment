@@ -37,6 +37,24 @@
       "compilerOptions": {
         "tsConfigPath": "libs/auth/tsconfig.lib.json"
       }
+    },
+    "products": {
+      "type": "library",
+      "root": "libs/products",
+      "entryFile": "index",
+      "sourceRoot": "libs/products/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/products/tsconfig.lib.json"
+      }
+    },
+    "analytics": {
+      "type": "library",
+      "root": "libs/analytics",
+      "entryFile": "index",
+      "sourceRoot": "libs/analytics/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/analytics/tsconfig.lib.json"
+      }
     }
   },
   "compilerOptions": {

@@ -19,13 +19,39 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@libs/boat": ["libs/boat/src"],
-      "@libs/boat/*": ["libs/boat/src/*"],
-      "@config/*": ["config/*"],
-      "@libs/users": ["libs/users/src"],
-      "@libs/users/*": ["libs/users/src/*"],
-      "@libs/auth": ["libs/auth/src"],
-      "@libs/auth/*": ["libs/auth/src/*"]
+      "@libs/boat": [
+        "libs/boat/src"
+      ],
+      "@libs/boat/*": [
+        "libs/boat/src/*"
+      ],
+      "@config/*": [
+        "config/*"
+      ],
+      "@libs/users": [
+        "libs/users/src"
+      ],
+      "@libs/users/*": [
+        "libs/users/src/*"
+      ],
+      "@libs/auth": [
+        "libs/auth/src"
+      ],
+      "@libs/auth/*": [
+        "libs/auth/src/*"
+      ],
+      "lib/products": [
+        "libs/products/src"
+      ],
+      "lib/products/*": [
+        "libs/products/src/*"
+      ],
+      "lib/analytics": [
+        "libs/analytics/src"
+      ],
+      "lib/analytics/*": [
+        "libs/analytics/src/*"
+      ]
     }
   },
   "exclude": [
