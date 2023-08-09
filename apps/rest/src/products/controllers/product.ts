@@ -13,7 +13,7 @@ export class ProductController extends RestController {
   async myProducts(@Req() req: Request, @Res() res: Response) {
     const response= await this.service.myProducts(req.all());
     return res.success(
-      await this.transform(req.user, new ProductTransformer(), { req }),
+      await this.transform(response, new ProductTransformer(), { req }),
     );
   }
 }

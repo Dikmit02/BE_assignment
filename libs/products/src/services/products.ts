@@ -4,7 +4,7 @@ import { ProductRepositoryContract } from '../repositories';
 import { IProduct$Model } from '../interface/product';
 
 @Injectable()
-export class ProductsService {
+export class ProductsLibService {
     constructor(
         @Inject(PRODUCT_REPOSITORY)
         private readonly products: ProductRepositoryContract,
@@ -15,11 +15,15 @@ export class ProductsService {
         return await this.products.update(where, params);
     }
     
-      async createUser(params: IProduct$Model) {
+      async createProduct(params: IProduct$Model) {
         return await this.products.create(params);
       }
+
+      async getProducts(params: IProduct$Model){
+        return await this.products.getWhere(params)
+      }
     
-      async updateUser(userId: number, params: IProduct$Model) {
+      async updateProduct(userId: number, params: IProduct$Model) {
         await this.products.updateWhere({ id: userId }, params);
         return await this.products.firstWhere({ id: userId });
       }
