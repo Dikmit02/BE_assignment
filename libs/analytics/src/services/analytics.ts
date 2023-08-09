@@ -4,7 +4,7 @@ import { AnalyticsRepositoryContract } from '../repositories';
 import { IAnalytics$Model } from '../interface/analytics';
 
 @Injectable()
-export class AnalyticsService {
+export class AnalyticsLibService {
     constructor(
         @Inject(ANALYTIC_REPOSITORY)
         private readonly analytics: AnalyticsRepositoryContract,
@@ -17,6 +17,10 @@ export class AnalyticsService {
       async createUser(params: IAnalytics$Model) {
         return await this.analytics.create(params);
       }
+
+    async getAnalytics(params:IAnalytics$Model){
+      return await this.analytics.getWhere(params)
+    }
     
       async updateUser(userId: number, params: IAnalytics$Model) {
         await this.analytics.updateWhere({ id: userId }, params);

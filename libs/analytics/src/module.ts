@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { AnalyticsService } from './services/analytics';
+import { AnalyticsLibService } from './services/analytics';
 import { ANALYTIC_REPOSITORY } from './constants';
 import { AnalyticsRepository } from './repositories';
 import { BoatModule } from '@libs/boat';
@@ -7,10 +7,10 @@ import { BoatModule } from '@libs/boat';
 @Module({
   imports: [BoatModule],
   providers: [
-    AnalyticsService,
+    AnalyticsLibService,
     { provide: ANALYTIC_REPOSITORY, useClass: AnalyticsRepository },
   ],
-  exports: [AnalyticsService],
+  exports: [AnalyticsLibService],
 })
 export class AnalyticsModule {}
 
