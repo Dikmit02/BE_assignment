@@ -49,6 +49,7 @@
     "inquirer": "^8.2.0",
     "ioredis": "^4.28.3",
     "knex": "^1.0.3",
+    "lodash": "^4.17.21",
     "mysql2": "^3.5.2",
     "objection": "^3.0.1",
     "passport": "^0.6.0",

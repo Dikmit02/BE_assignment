@@ -3,13 +3,21 @@ import { Request, Response, RestController } from '@libs/boat';
 import { ProductApiService } from '../services/service';
 import { ProductTransformer } from 'lib/products';
 
-@Controller('my-products')
+@Controller('')
 export class ProductController extends RestController {
   constructor(private readonly service: ProductApiService) {
     super();
   }
 
-  @Get('')
+  @Get('list-products')
+  async listProducts(@Req() req: Request, @Res() res: Response) {
+    const response= await this.service.myProducts(req.all());
+    return res.success(
+      await this.paginate(response, new ProductTransformer(), { req }),
+    );
+  }
+
+  @Get('my-products')
   async myProducts(@Req() req: Request, @Res() res: Response) {
     const response= await this.service.myProducts(req.all());
     return res.success(

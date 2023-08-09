@@ -6,10 +6,12 @@ export async function seed(knex: Knex): Promise<void> {
     await knex("products").del();
 
     // Inserts seed entries
-    await knex("products").insert( 
-         data.products.map((product)=>({
-          ...product,
-          features:JSON.stringify(product?.features),
+    // await knex("products").insert( 
+    //      data.products.map((product)=>({
+    //       ...product,
+    //       features:JSON.stringify(product?.features),
 
-         }))
-       )};
+    //      }))
+    //    )
+      
+      };

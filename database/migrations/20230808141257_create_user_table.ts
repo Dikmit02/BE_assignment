@@ -1,8 +1,9 @@
 import { Knex } from 'knex';
-import { timestamps } from '../helpers';
 
 export async function up(knex: Knex): Promise<void> {
   return knex.schema.createTable('users', function (table) {
+    table.bigIncrements('id');
+    table.uuid('uuid').index();
     table.string('displayname');
     table.string('firstname');
     table.string('email').unique();
@@ -12,8 +13,8 @@ export async function up(knex: Knex): Promise<void> {
     table.string('organization');
     table.date('dob')
     table.string('password');
-    table.json('charts');
-    table.json('productFeatures');
+    // table.json('charts');
+    // table.json('productFeatures');
   });
 }
 

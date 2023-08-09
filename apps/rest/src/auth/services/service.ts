@@ -4,7 +4,6 @@ import { Injectable } from '@nestjs/common';
 import { LoginDto, SignUpDto } from '../validators';
 import * as bcrypt from 'bcrypt';
 import { ConfigService } from '@nestjs/config';
-import { InvalidCredentials } from '@libs/boat';
 import { JwtPayload } from '@libs/auth';
 import { AuthLibService } from '@libs/auth/services/auth';
 
@@ -21,10 +20,10 @@ export class AuthApiService {
     const params = await this.validator.fire(inputs, LoginDto);
     const user = await this.users.firstWhere({ email: params.email });
 
-    if (!(await this.validateUser(user, params.password))) {
-      throw new InvalidCredentials();
-    }
-    const payload: JwtPayload = { uuid: user.uuid };
+    // if (!(await this.validateUser(user, params.password))) {
+    //   throw new InvalidCredentials();
+    // }
+    const payload: JwtPayload = { uuid: user.email };
     const token = await this.authService.generateToken(payload);
     return { user, token };
   }
@@ -36,7 +35,7 @@ export class AuthApiService {
       ...params,
       password,
     });
-    const payload: JwtPayload = { uuid: user.uuid };
+    const payload: JwtPayload = { uuid: user.email };
     const token = await this.authService.generateToken(payload);
     return { user, token };
   }

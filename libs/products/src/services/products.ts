@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { PRODUCT_REPOSITORY } from '../constants';
 import { ProductRepositoryContract } from '../repositories';
-import { IProduct$Model } from '../interface/product';
+import { IProduct$Model, IProduct$SchemaModel } from '../interface/product';
 
 @Injectable()
 export class ProductsLibService {
@@ -19,8 +19,8 @@ export class ProductsLibService {
         return await this.products.create(params);
       }
 
-      async getProducts(params: IProduct$Model){
-        return await this.products.getWhere(params)
+      async getProducts(params: IProduct$SchemaModel){
+        return await this.products.search(params)
       }
     
       async updateProduct(userId: number, params: IProduct$Model) {

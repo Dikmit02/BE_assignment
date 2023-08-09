@@ -23,7 +23,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     const { uuid } = payload;
     let user;
     if (uuid) {
-      user = await this.userService.firstWhere({ uuid });
+      user = await this.userService.firstWhere({ email:uuid });
     }
     if (!user) {
       throw new InvalidCredentials();

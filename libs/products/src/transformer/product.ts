@@ -6,7 +6,7 @@ export class ProductTransformer extends Transformer {
   public availableIncludes = ['usageLimit', 'doctorDetails'];
   async transform(product: IProduct$Model): Promise<Record<string, any>> {
     return {
-      id: product?.uuid,
+      // id: product?.uuid,
       productId: product?.productId,
       ProductName: product?.ProductName,
       features: product?.features
