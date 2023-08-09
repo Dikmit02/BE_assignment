@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { ANALYTIC_REPOSITORY } from '../constants';
 import { AnalyticsRepositoryContract } from '../repositories';
-import { IAnalytics$Model } from '../interface/analytics';
+import { IAnalytics$Model, IAnalytics$SchemaModel } from '../interface/analytics';
 
 @Injectable()
 export class AnalyticsLibService {
@@ -18,8 +18,8 @@ export class AnalyticsLibService {
       return await this.analytics.create(params);
     }
 
-    async getAnalytics(params:IAnalytics$Model){
-      return await this.analytics.getWhere(params)
+    async getAnalytics(params:IAnalytics$SchemaModel,user){
+      return await this.analytics.getAnalytics(params,user)
     }
     
     async updateUser(userId: number, params: IAnalytics$Model) {

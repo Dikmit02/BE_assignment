@@ -21,12 +21,12 @@ export class SignUpDto {
   @MinLength(3)
   @IsString()
   @IsNotEmpty()
-  firstName: string;
+  firstname: string;
 
   @MinLength(3)
   @IsString()
   @IsNotEmpty()
-  lastName: string;
+  lastname: string;
 
   @IsNotEmpty()
   @Matches(/((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/, {

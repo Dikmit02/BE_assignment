@@ -4,6 +4,10 @@ export interface IUser$Model extends ObjectionModel {
   userName?: string;
   email?: string;
   password?: string;
-  firstName?: string;
-  lastName?: string;
+  firstname?: string;
+  lastname?: string;
+  displayname?:string
+  profile?:string,
+  organization?:string,
+  dob?:string
 }

@@ -10,8 +10,8 @@ export class AnalyticsApiService {
     private readonly analytics: AnalyticsLibService,
   ) {}
 
-  async getAnalytics(inputs: Record<string, any>) {
-    return  await this.analytics.getAnalytics(inputs);
+  async getAnalytics(inputs: Record<string, any>,user) {
+    return  await this.analytics.getAnalytics(inputs,user);
   }
 
 

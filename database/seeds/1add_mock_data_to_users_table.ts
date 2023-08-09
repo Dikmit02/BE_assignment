@@ -8,20 +8,25 @@ export async function seed(knex: Knex): Promise<void> {
     // Deletes ALL existing entries
     await knex("users").del();
 
+    const payload=[]
+
+ for await (const user of data?.users) {
+  payload.push(
+    {password:await bcrypt.hash(user?.password, process.env.BCRYPT_SALT),
+    displayname:user?.displayname,
+    firstname:user?.firstname,
+    email:user?.email,
+    lastname:user?.lastname,
+    username:user?.username,
+    profile:user?.profile,
+    organization:user?.organization,
+    dob:user?.dob}
+  )
+    }
+    
     // Inserts seed entries
     await knex("users").insert( 
-      data.users.map((user)=>({
-        password:bcrypt.hash(user?.password, `\$2b\$10\$5yMonn8Zmz6nZhUUbfl17O`),
-        displayname:user?.displayname,
-        firstname:user?.firstname,
-        email:user?.email,
-        lastname:user?.email,
-        username:user?.username,
-        profile:user?.profile,
-        organization:user?.organization,
-        dob:user?.dob
-      })
-      )
+      payload
     )
       };
 

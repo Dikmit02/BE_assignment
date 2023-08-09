@@ -2,7 +2,7 @@ import { ObjectionModel, SortableSchema } from '@libs/boat';
 
 export interface IProduct$Model extends ObjectionModel {
   productId?: string;
-  ProductName?: string;
+  productName?: string;
   features?: IProductFeatures$Model[];
  
 }

@@ -20,10 +20,10 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
   }
 
   async validate(payload: JwtPayload): Promise<IUser$Model> {
-    const { uuid } = payload;
+    const { email } = payload;
     let user;
-    if (uuid) {
-      user = await this.userService.firstWhere({ email:uuid });
+    if (email) {
+      user = await this.userService.firstWhere({ email });
     }
     if (!user) {
       throw new InvalidCredentials();

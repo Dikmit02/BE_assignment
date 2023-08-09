@@ -10,8 +10,14 @@ export class ProductApiService {
     private readonly validator: BaseValidator,
   ) {}
 
-  async myProducts(inputs: Record<string, any>) {
+   
+  async allProducts (inputs: Record<string, any>) {
     const validParams = await this.validator.fire(inputs, SearchProductDto);
     return  await this.products.getProducts(validParams);
+  }
+
+  async myProducts (inputs: Record<string, any>,user) {
+    const validParams = await this.validator.fire(inputs, SearchProductDto);
+    return  await this.products.myProducts(validParams,user);
   }
 }

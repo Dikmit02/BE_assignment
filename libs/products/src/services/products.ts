@@ -31,4 +31,8 @@ export class ProductsLibService {
       async firstWhere(where: IProduct$Model, error = true) {
         return await this.products.firstWhere(where, error);
       }
+
+      async myProducts(params: IProduct$SchemaModel,user){
+        return await this.products.myProducts(params,user)
+      }
 }
