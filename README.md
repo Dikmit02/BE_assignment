@@ -14,10 +14,10 @@
 
 # Description
 
-## Backend Implementation Using NestJS, Express, TypeScript, and MySQL
+## Backend Implementation Using NestJS, Express, TypeScript, and Postgres
 
 ### Overview
-This document outlines the backend implementation for signup, login and profile features using NodeJS with ExpressJS framework and a MySQL database. The application is implemented using NestJS, which is a scalable, efficient, and structured server-side Node.js framework built with TypeScript. It also uses Express.js under the hood and is compatible with the majority of Express.js middleware.
+This document outlines the backend implementation for login , profile, getProducts, getMyProducta and getMyAnalytics features using NodeJS with ExpressJS framework and a Postgres database. The application is implemented using NestJS, which is a scalable, efficient, and structured server-side Node.js framework built with TypeScript. It also uses Express.js under the hood and is compatible with the majority of Express.js middleware.
 
 ### Code Structure
 The main file of the application is located at apps/rest/src/main.ts. This file creates a factory module similar to an Express app. The code is organised using the repository pattern for DB operations, making it modular and maintainable betterprogramming.pub.
@@ -26,7 +26,7 @@ The main file of the application is located at apps/rest/src/main.ts. This file 
 The application uses global validations and an error Pipe for intercepting errors and providing appropriate responses. It utilises the class-validator library to validate incoming data masteringbackend.com.
 
 ### Database Operations
-The application uses Objection.js and Knex.js as ORM (Object-Relational Mapping) tools to interact with the MySQL database. These ORMs provide a powerful query API and help to prevent SQL injection attacks.
+The application uses Objection.js and Knex.js as ORM (Object-Relational Mapping) tools to interact with the Postgres database. These ORMs provide a powerful query API and help to prevent SQL injection attacks.
 
 ### Data Transformation
 A transformer layer is implemented to transform the response data according to the requirements. This layer helps to ensure that the data sent to the client is in the correct format and can be easily consumed.
@@ -41,7 +41,7 @@ TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. 
 NestJS uses Dependency Injection (DI) to organize the code in a flexible and efficient manner. DI is a design pattern in which a class receives its dependencies from external sources rather than creating them itself. This leads to more modular, testable, and maintainable code masteringbackend.com.
 
 ### Conclusion
-This application demonstrates how to implement a secure and efficient backend using NodeJS with ExpressJS framework, MySQL database, and TypeScript. It uses best practices such as server-side validation, error handling, and secure coding. The code is well-structured and modular, making it easy to maintain and extend in the future.
+This application demonstrates how to implement a secure and efficient backend using NodeJS with ExpressJS framework, Postgres database, and TypeScript. It uses best practices such as server-side validation, error handling, and secure coding. The code is well-structured and modular, making it easy to maintain and extend in the future.
 
 ## Installation
 
@@ -52,6 +52,11 @@ $ npm install
 ## Migration
 ```bash
 $ npm run migrate:up
+```
+
+## Seed
+```bash
+$ npm run seed:run
 ```
 
 ## Running the app
@@ -69,6 +74,8 @@ $ npm run start:prod
 
 
 ## License
-Diksha Mittal
-dikshmittal21297@gmail.com
+
+The MIT License. Please see License File for more information. Copyright © 2023 Diksha.
+
+Made with ❤️ by [Diksha Mittal](https://www.linkedin.com/in/diksha-mittal-672498154/)
 
